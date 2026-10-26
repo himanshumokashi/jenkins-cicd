@@ -2,52 +2,67 @@
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = 'jenkins-cicd'
+        EC2_HOST = '13.200.243.242'
+        EC2_USER = 'ubuntu'
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
-                echo 'GitHub source code downloaded'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t jenkins-cicd:${BUILD_NUMBER} .'
-            }
-        }
-
-        stage('Run Website') {
-            steps {
                 sh '''
-                    docker rm -f jenkins-ci-test 2>/dev/null || true
-                    docker run -d --name jenkins-ci-test \
-                        -p 127.0.0.1:18080:80 \
-                        jenkins-cicd:${BUILD_NUMBER}
+                    docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} .
+                    docker save ${IMAGE_NAME}:${BUILD_NUMBER} -o website-image.tar
                 '''
             }
         }
 
-        stage('Test Website') {
+        stage('Transfer Image to EC2') {
             steps {
-                sh '''
-                    for i in $(seq 1 10); do
-                        if curl -fsS http://127.0.0.1:18080/ >/dev/null; then
-                            echo "SUCCESS: Website is responding"
-                            exit 0
-                        fi
-                        sleep 2
-                    done
-
-                    echo "ERROR: Website did not respond"
-                    exit 1
-                '''
+                sshagent(credentials: ['ec2-ssh-key']) {
+                    sh '''
+                        scp -o StrictHostKeyChecking=accept-new \
+                            website-image.tar \
+                            ${EC2_USER}@${EC2_HOST}:/tmp/website-image.tar
+                    '''
+                }
             }
         }
-    }
 
-    post {
-        always {
-            sh 'docker rm -f jenkins-ci-test 2>/dev/null || true'
+        stage('Deploy to EC2') {
+            steps {
+                sshagent(credentials: ['ec2-ssh-key']) {
+                    sh '''
+                        ssh -o StrictHostKeyChecking=accept-new \
+                            ${EC2_USER}@${EC2_HOST} '
+                                docker load -i /tmp/website-image.tar &&
+                                docker rm -f jenkins-cicd-site 2>/dev/null || true
+                                docker run -d --restart unless-stopped \
+                                    --name jenkins-cicd-site \
+                                    -p 80:80 \
+                                    ${IMAGE_NAME}:${BUILD_NUMBER}
+                                rm -f /tmp/website-image.tar
+                            '
+                    '''
+                }
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh '''
+                    curl -fsS --retry 5 --retry-delay 3 \
+                        http://${EC2_HOST}/ >/dev/null
+                    echo "SUCCESS: Website deployed to EC2"
+                '''
+            }
         }
     }
 }
