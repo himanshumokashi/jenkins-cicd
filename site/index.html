@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="Casual Navy">
+  <meta name="description" content="A modern DevOps portfolio showcasing Linux, Docker, Jenkins, GitHub Actions and AWS learning projects.">
+  <title>Himanshu | DevOps Launchpad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <nav class="navbar wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="DevOps Launchpad home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>HIMANSHU<span class="brand-muted">.OPS</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#journey">Journey</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#events">Events</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-cta" href="#projects">Explore work <span>↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> BUILDING • AUTOMATING • LEARNING</div>
+        <h1>Turning code into<br><span class="gradient-text">something real.</span></h1>
+        <p class="hero-description">Hey, I’m Himanshu — a DevOps fresher learning to ship reliable applications with Linux, Docker, Jenkins, GitHub and AWS.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my projects <span>↘</span></a>
+          <a class="button button-ghost" href="#journey"><span class="play-icon">▶</span> See my journey</a>
+        </div>
+        <div class="hero-proof">
+          <div class="avatar-stack" aria-hidden="true"><span>H</span><span>⌘</span><span>↗</span></div>
+          <div><strong>Learning by building</strong><small>Hands-on labs • Real deployments</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-glow"></div>
+        <div class="terminal-card">
+          <div class="terminal-top">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>deployment.sh</span>
+            <span class="terminal-lock">⌁</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line"><span class="line-no">01</span><span class="code-purple">#!/bin/bash</span></div>
+            <div class="terminal-line"><span class="line-no">02</span><span class="code-muted"># Ship it, safely.</span></div>
+            <div class="terminal-line"><span class="line-no">03</span><span><b class="code-blue">git</b> push origin main</span></div>
+            <div class="terminal-line"><span class="line-no">04</span><span><b class="code-blue">docker</b> build -t app .</span></div>
+            <div class="terminal-line"><span class="line-no">05</span><span><b class="code-blue">jenkins</b> pipeline run</span></div>
+            <div class="terminal-line"><span class="line-no">06</span><span><b class="code-green">deploy</b> --target aws-ec2</span></div>
+            <div class="terminal-spacer"></div>
+            <div class="terminal-output"><span class="pulse-dot"></span> LOCAL DEMO RUNNING <span class="output-time">just now</span></div>
+          </div>
+          <div class="terminal-footer"><span>main</span><span>UTF-8</span><span>bash</span><span class="footer-right">100%</span></div>
+        </div>
+        <div class="floating-card float-top"><span class="float-icon cyan">↗</span><div><small>DEPLOYMENT MODE</small><strong>Continuous learning</strong></div></div>
+        <div class="floating-card float-bottom"><span class="float-icon purple">⌘</span><div><small>TECH STACK</small><strong>Linux · Docker · AWS</strong></div></div>
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      </div>
+      <a class="scroll-cue" href="#journey"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="tech-strip">
+      <div class="wrap tech-strip-inner">
+        <span class="strip-label">MY TOOLKIT</span>
+        <div class="tech-item"><span class="tech-symbol linux">▰</span> Linux</div>
+        <div class="tech-item"><span class="tech-symbol docker">◈</span> Docker</div>
+        <div class="tech-item"><span class="tech-symbol jenkins">✳</span> Jenkins</div>
+        <div class="tech-item"><span class="tech-symbol github">⌘</span> GitHub</div>
+        <div class="tech-item"><span class="tech-symbol aws">⌁</span> AWS</div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="journey">
+      <div class="section-heading">
+        <div><div class="eyebrow">01 / THE JOURNEY</div><h2>Small steps. <span class="gradient-text">Real progress.</span></h2></div>
+        <p>Learning the tools behind modern software delivery, one practical milestone at a time.</p>
+      </div>
+      <div class="journey-grid">
+        <article class="journey-card"><div class="journey-icon icon-terminal">$_</div><span class="card-kicker">FOUNDATION</span><h3>Linux & Git</h3><p>Command line basics, file permissions, shell commands, version control and clean commits.</p><div class="tag-row"><span>Ubuntu</span><span>Bash</span><span>Git</span></div><div class="card-bottom"><span class="mini-status complete"></span> Practicing now <span class="card-arrow">↗</span></div></article>
+        <article class="journey-card featured-card"><div class="journey-icon icon-docker">◈</div><span class="card-kicker">CONTAINERS</span><h3>Docker & Nginx</h3><p>Package a responsive website into a container and publish it through a mapped port.</p><div class="tag-row"><span>Dockerfile</span><span>Nginx</span><span>Ports</span></div><div class="card-bottom"><span class="mini-status complete"></span> Local demo working <span class="card-arrow">↗</span></div></article>
+        <article class="journey-card"><div class="journey-icon icon-cloud">☁</div><span class="card-kicker">NEXT MILESTONE</span><h3>Jenkins → AWS</h3><p>Build a CI/CD pipeline that pulls from GitHub and deploys the container to an EC2 server.</p><div class="tag-row"><span>Jenkins</span><span>EC2</span><span>CI/CD</span></div><div class="card-bottom"><span class="mini-status planned"></span> In progress <span class="card-arrow">↗</span></div></article>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><div class="eyebrow">02 / FEATURED WORK</div><h2>Built to learn. <span class="gradient-text">Made to grow.</span></h2></div>
+          <p>Practical projects that turn concepts into working demos.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card project-main">
+            <div class="project-visual visual-pipeline">
+              <div class="pipeline-top"><span>PIPELINE / 001</span><span class="pipeline-live"><i></i> LOCAL DEMO</span></div>
+              <div class="pipeline-flow"><div class="pipe-node"><span>⌘</span><small>GitHub</small></div><div class="pipe-line"></div><div class="pipe-node"><span>⚙</span><small>Jenkins</small></div><div class="pipe-line"></div><div class="pipe-node"><span>◈</span><small>Docker</small></div><div class="pipe-line"></div><div class="pipe-node"><span>☁</span><small>AWS EC2</small></div></div>
+              <div class="pipeline-caption"><span>Source → Build → Package → Deploy</span><span class="code-green">●</span></div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">CI/CD PROJECT</span><span class="project-number">01</span></div><h3>Automated Website Deployment</h3><p>A modern website served by Nginx in Docker. Next: connect GitHub and automate deployment with Jenkins to AWS EC2.</p><div class="tag-row"><span>HTML / CSS</span><span>Docker</span><span>Jenkins</span><span>AWS</span></div><a class="text-link" href="#events">View build milestones <span>↗</span></a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-code">
+              <div class="code-window"><div class="code-window-top"><i></i><i></i><i></i><span>health-check.sh</span></div><pre><span class="code-purple">#!/bin/bash</span>
+<span class="code-muted"># Quick system check</span>
+<span class="code-blue">echo</span> <span class="code-green">"Disk usage:"</span>
+df -h /
+<span class="code-blue">echo</span> <span class="code-green">"Memory:"</span>
+free -h</pre></div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">AUTOMATION</span><span class="project-number">02</span></div><h3>Linux Health Check</h3><p>A beginner-friendly shell script concept for checking disk space and memory before deployment.</p><div class="tag-row"><span>Linux</span><span>Bash</span></div><a class="text-link" href="#events">Explore learning log <span>↗</span></a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual visual-cloud">
+              <div class="cloud-ring ring-a"></div><div class="cloud-ring ring-b"></div><div class="cloud-center">☁<small>EC2</small></div>
+              <div class="cloud-chip chip-a">SSH</div><div class="cloud-chip chip-b">Docker</div><div class="cloud-chip chip-c">Ubuntu</div>
+            </div>
+            <div class="project-content"><div class="project-meta"><span class="project-type">CLOUD LAB</span><span class="project-number">03</span></div><h3>AWS EC2 Practice</h3><p>Connecting to an Ubuntu server over SSH, installing Docker and preparing a remote deployment target.</p><div class="tag-row"><span>AWS EC2</span><span>SSH</span><span>Ubuntu</span></div><a class="text-link" href="#journey">See the journey <span>↗</span></a></div>
+          </article>
+        </div>
+        <p class="project-note"><span>ⓘ</span> Project status is shown honestly: local Docker demo is working; the automated Jenkins-to-EC2 pipeline is the next milestone.</p>
+      </div>
+    </section>
+
+    <section class="section wrap" id="events">
+      <div class="section-heading">
+        <div><div class="eyebrow">03 / BUILD LOG</div><h2>From terminal <span class="gradient-text">to launch.</span></h2></div>
+        <p>A living timeline of the project. Add new milestones as you build.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item"><div class="timeline-marker done">✓</div><div class="timeline-date">MILESTONE 01 <span>COMPLETED</span></div><div class="timeline-body"><h3>Website containerized with Docker</h3><p>Created a Docker image using Nginx, mapped the container port, and verified the website responds with HTTP 200 OK.</p><div class="timeline-tags"><span>Docker</span><span>Nginx</span><span>HTTP 200</span></div></div><div class="timeline-time">Local machine</div></article>
+        <article class="timeline-item"><div class="timeline-marker done">✓</div><div class="timeline-date">MILESTONE 02 <span>COMPLETED</span></div><div class="timeline-body"><h3>AWS EC2 prepared as a deployment target</h3><p>Connected to an Ubuntu EC2 instance with SSH and verified Docker installation.</p><div class="timeline-tags"><span>AWS EC2</span><span>SSH</span><span>Ubuntu</span></div></div><div class="timeline-time">Cloud lab</div></article>
+        <article class="timeline-item"><div class="timeline-marker current"><span></span></div><div class="timeline-date">MILESTONE 03 <span class="in-progress-label">IN PROGRESS</span></div><div class="timeline-body"><h3>Connect GitHub and Jenkins</h3><p>Push the source code to GitHub, configure Jenkins credentials, and create a repeatable build pipeline.</p><div class="timeline-tags"><span>GitHub</span><span>Jenkins</span><span>Pipeline</span></div></div><div class="timeline-time">Up next</div></article>
+        <article class="timeline-item"><div class="timeline-marker future">04</div><div class="timeline-date">MILESTONE 04 <span class="planned-label">PLANNED</span></div><div class="timeline-body"><h3>Automated deployment to EC2</h3><p>Make a code change, trigger the pipeline, and verify the updated website on the cloud server.</p><div class="timeline-tags"><span>CI/CD</span><span>Docker</span><span>Deployment</span></div></div><div class="timeline-time">Goal</div></article>
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="wrap cta-inner">
+        <div class="cta-orb"></div>
+        <div class="eyebrow"><span class="pulse-dot"></span> OPEN TO LEARNING & OPPORTUNITIES</div>
+        <h2>Good systems are built<br> <span class="gradient-text">one iteration at a time.</span></h2>
+        <p>I’m growing my DevOps skills through hands-on projects and practical problem-solving.</p>
+        <div class="cta-actions"><a class="button button-primary" href="https://github.com/himanshumokashi" target="_blank" rel="noopener noreferrer">Find me on GitHub <span>↗</span></a><a class="button button-ghost" href="mailto:himanshumokashi1622@gmail.com">Say hello <span>↗</span></a></div>
+        <small class="contact-note">Replace the example email and GitHub link with your real profile before publishing.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-mark"><span></span><span></span><span></span></span><span>HIMANSHU<span class="brand-muted">.OPS</span></span></a><p>Designed with curiosity. Deployed with containers.</p><a class="back-top" href="#home">Back to top ↑</a><span class="copyright">© <span id="year"></span> Himanshu</span></div>
+  </footer>
+</body>
+</html>
