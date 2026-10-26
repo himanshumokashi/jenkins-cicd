@@ -26,7 +26,7 @@ pipeline {
 
         stage('Transfer Image to EC2') {
             steps {
-                sshagent(credentials: ['ec2-ssh-key']) {
+                sshagent(credentials: ['ec2-ssh-key-v2']) {
                     sh '''
                         scp -o StrictHostKeyChecking=accept-new \
                             website-image.tar \
