@@ -14,8 +14,3 @@ Preview locally with your existing Docker project:
      docker run -d --name jenkins-cicd-test -p 8086:80 jenkins-cicd:v2
 3. Open http://localhost:8086
 
-Before publishing:
-- Replace the example GitHub link (https://github.com/) with your real profile/repository.
-- Replace hello@example.com with your real contact email.
-- The website labels the Jenkins-to-EC2 pipeline as in progress, not completed.
-- Google Fonts are loaded from the internet; the page still uses fallback fonts if offline.
