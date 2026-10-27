@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'jenkins-cicd'
+        IMAGE_NAME = 'portfolio-website'
         EC2_HOST = '13.200.243.242'
         EC2_USER = 'ubuntu'
     }
@@ -47,9 +47,9 @@ pipeline {
                         ssh -o StrictHostKeyChecking=accept-new ${EC2_USER}@${EC2_HOST} '
                             set -e
                             docker load -i /tmp/website-image.tar
-                            docker rm -f jenkins-cicd-site 2>/dev/null || true
+                            docker rm -f portfolio-website 2>/dev/null || true
                             docker run -d --restart unless-stopped \
-                                --name jenkins-cicd-site \
+                                --name portfolio-website \
                                 -p 80:80 \
                                 ${IMAGE_NAME}:${BUILD_NUMBER}
                             rm -f /tmp/website-image.tar
