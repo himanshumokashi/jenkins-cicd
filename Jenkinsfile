@@ -37,26 +37,28 @@ pipeline {
         }
 
        
+        
         stage('Deploy to EC2') {
             steps {
-                  sshagent(credentials: ['ec2-ssh-key-v3']) {
+                sshagent(credentials: ['ec2-ssh-key-v3']) {
                     sh """
-                      set -e
+                        set -e
 
-                     ssh -o StrictHostKeyChecking=accept-new ${EC2_USER}@${EC2_HOST} '
-                     set -e
-                     docker load -i /tmp/website-image.tar
-                     docker rm -f jenkins-cicd-site 2>/dev/null || true
-                     docker run -d --restart unless-stopped \
-                        --name jenkins-cicd-site \
-                        -p 80:80 \
-                        ${IMAGE_NAME}:${BUILD_NUMBER}
-                     rm -f /tmp/website-image.tar
-                     '
+                        ssh -o StrictHostKeyChecking=accept-new ${EC2_USER}@${EC2_HOST} '
+                            set -e
+                            docker load -i /tmp/website-image.tar
+                            docker rm -f jenkins-cicd-site 2>/dev/null || true
+                            docker run -d --restart unless-stopped \
+                                --name jenkins-cicd-site \
+                                -p 80:80 \
+                                ${IMAGE_NAME}:${BUILD_NUMBER}
+                            rm -f /tmp/website-image.tar
+                        '
                     """
                 }
             }
         }
+
  
 
         stage('Verify Deployment') {
