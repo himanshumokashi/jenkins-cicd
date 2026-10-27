@@ -28,10 +28,12 @@ docker build -t portfolio-website .
 docker run -d -p 8080:80 portfolio-website
 ```
 
-Open `http://localhost:8080` in your browser.
+Open: http://localhost:8080
 
-## Author
+## Live Website
 
-**Himanshu Mokashi**
+Visit: http://13.200.243.242/
+
+The website is deployed on AWS EC2 using Docker, Nginx, and Jenkins CI/CD.
 
 GitHub: [https://github.com/himanshumokashi](https://github.com/himanshumokashi)
